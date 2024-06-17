@@ -9,10 +9,12 @@ class CustomerService {
 
     public function storeCustomers()
     {
+        $email = validate_email(post('email'));
+
         $customer = new Customer([
             'firstname' => post('firstname'),
             'lastname'  => post('lastname'),
-            'email'     => post('email'),
+            'email'     => $email,
             'city'      => post('city'),
             'country'   => post('country'),
         ]);
