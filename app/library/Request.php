@@ -3,6 +3,9 @@ namespace app\library;
 
 class Request 
 {
+    /**
+     * Group All Requests and return the active route
+     */
     public static function group($routes)
     {
         $method = $_SERVER['REQUEST_METHOD'];

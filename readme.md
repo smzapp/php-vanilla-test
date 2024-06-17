@@ -2,7 +2,8 @@
 
 # About 
 
-This source code is intended for test code for Abukai
+This source code is intended for test code for Abukai.
+Please do not distribute this without permission from the author.
 
 # Setup
 

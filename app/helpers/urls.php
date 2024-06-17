@@ -12,3 +12,8 @@ function get_request_path()
     
     return $path;
 }
+
+function base_url($slug)
+{
+    return BASE_URL . $slug;
+}

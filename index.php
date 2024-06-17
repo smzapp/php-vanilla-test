@@ -7,6 +7,8 @@ define('APP_NAME', 'ABUKAI TEST');
 
 define('BASE_URL', 'http://localhost/testabukai');
 
+define('APP_DIR', __DIR__);
+
 
 /**
  * Enable autoloader for our MVC app
