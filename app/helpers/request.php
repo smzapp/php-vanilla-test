@@ -6,10 +6,12 @@
  */
 if(!function_exists('post')) {
     function post($index, $sanitize = true) {
-        if ($sanitize) {
-            return sanitize_str($_POST[$index]);
+        if(isset($_POST[$index])) {
+            if ($sanitize) {
+                return sanitize_str($_POST[$index]);
+            }
+            return $_POST[$index];
         }
-        return $_POST[$index];
     }
 }
 
@@ -18,9 +20,11 @@ if(!function_exists('post')) {
  */
 if(!function_exists('get')) {
     function get($index, $sanitize = true) {
-        if ($sanitize) {
-            return sanitize_str($_GET[$index]);
+        if(isset($_GET[$index])) {
+            if ($sanitize) {
+                return sanitize_str($_GET[$index]);
+            }
+            return $_GET[$index];
         }
-        return $_GET[$index];
     }
 }

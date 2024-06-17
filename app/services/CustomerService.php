@@ -29,7 +29,17 @@ class CustomerService {
                 'customer_id' => $id
             ]);
             $image->save();
+
+            return $upload['path'];
         }
+    }
+
+
+    public function findByEmail()
+    {
+        $customer = new Customer();
+
+        return $customer->findByEmail(get('email'));
     }
 
 }

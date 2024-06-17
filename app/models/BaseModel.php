@@ -7,9 +7,9 @@ use app\library\Database;
 class BaseModel {
 
     private $dataArray;
-    private $conn;
     private $childClass;
     private $tableName;
+    public $conn;
 
     public function __construct($data = []) 
     {
@@ -19,6 +19,7 @@ class BaseModel {
         $db = new Database();
         $this->conn = $db->getConnection();
     }
+
 
     public function initChildClass()
     {
@@ -40,8 +41,4 @@ class BaseModel {
         return $this->conn->lastInsertId();
     }
 
-    public function insert()
-    {
-
-    }
 }

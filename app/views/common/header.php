@@ -7,3 +7,8 @@
     <title>TEST - by Samuel</title>
 </head>
 <body>
+    <div class="text-center mb-2">
+        <a href="<?php echo base_url('/customers'); ?>">Add Customers</a> &nbsp;
+        <a href="<?php echo base_url('/customers/item?email=samador@test.com'); ?>">Find By Email Address</a>
+        <a href="<?php echo base_url('/calculator'); ?>">Mini Pocket Calculator</a>
+    </div>

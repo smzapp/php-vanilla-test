@@ -11,13 +11,23 @@ class Response {
     /**
      * returns view/ui from controller
      */
-    public static function view($file)
+    public static function view($file, $data = [])
     {
+        foreach ($data as $key => $value) {
+            $_SESSION[$key] = $value;
+        }
+
         require_once APP_DIR . '/app/views' . $file . '.php';
     }
 
-    public static function withSession($url, $data = [])
+    public static function with($url, $data = [])
     {
-        return self::redirect($url);
+        foreach ($data as $key => $value) {
+            $_SESSION[$key] = $value;
+        }
+
+        self::redirect($url);
     }
+
+    
 }

@@ -14,9 +14,13 @@ class CustomerController extends BaseController
         $this->service = new CustomerService();
     }
 
-    public function index()
+    public function item()
     {
-        return Response::view('/customers/list');
+        $result = $this->service->findByEmail();
+
+        return Response::view('/customers/item', [
+            'data' => $result
+        ]);
     }
 
     public function add()
@@ -27,13 +31,16 @@ class CustomerController extends BaseController
     public function store()
     {
         try {
-            $this->service->storeCustomers();
+            $path = $this->service->storeCustomers();
 
-            return Response::redirect('/customers');
+            return Response::with('/customers', [
+                'message' => 'Successfully added data',
+                'image_path' => $path
+            ]);
 
         } catch(\Exception $e) {
 
-            return Response::withSession('/customers');
+            return Response::with('/customers');
         }
     }
 

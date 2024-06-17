@@ -13,8 +13,8 @@ $group = Request::group([
     "GET" => [
         '/' => ['view', dir_views('main')],
         '/customers' => [CustomerController::class, 'add'],
-        '/customers/list' => [CustomerController::class, 'index'],
-        '/customers/edit' => [CustomerController::class, 'edit'],
+        '/customers/item' => [CustomerController::class, 'item'],
+        '/calculator' => ['view', dir_views('calculator')],
     ],
 
     "POST" => [
