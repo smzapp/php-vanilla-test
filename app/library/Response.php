@@ -16,9 +16,8 @@ class Response {
         require_once APP_DIR . '/app/views' . $file . '.php';
     }
 
-    public static function withSession($url, $data)
+    public static function withSession($url, $data = [])
     {
-
         return self::redirect($url);
     }
 }

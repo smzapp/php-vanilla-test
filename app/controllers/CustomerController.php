@@ -26,16 +26,14 @@ class CustomerController extends BaseController
 
     public function store()
     {
-        $this->service->storeCustomers();
-
         try {
-            // $this->service->storeCustomers();
+            $this->service->storeCustomers();
 
-            // return Response::redirect('/customers');
+            return Response::redirect('/customers');
 
         } catch(\Exception $e) {
 
-            // return Response::withSession('/customers');
+            return Response::withSession('/customers');
         }
     }
 

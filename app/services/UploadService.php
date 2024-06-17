@@ -15,20 +15,25 @@ class UploadService {
 
     public static function move($inputName)
     {
+        $targetDir = dir_app("/uploads/");
+
         $fileName = basename($_FILES[$inputName]["name"]);
 
-        $targetFilePath = dir_app("/uploads/") . $fileName;
+        $targetFilePath = $targetDir . $fileName;
 
         $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);
 
+        $uniqueFileName = uniqid() . '_' . $fileName;
 
+        $targetFilePath = $targetDir . $uniqueFileName;
+        
         if (in_array($fileType, self::$allowedTypes)) {
-            if (move_uploaded_file($_FILES[$inputName]["tmp_name"], $targetFilePath))
+            if (move_uploaded_file($_FILES[$inputName]['tmp_name'], $targetFilePath))
             {
                 return [
                     'filename' => $fileName,
-                    'tmpname' => $_FILES[$inputName]["tmp_name"],
-                    'path' => $targetFilePath
+                    'tmpname' => $_FILES[$inputName]['tmp_name'],
+                    'path' => 'uploads/' . $uniqueFileName
                 ];
             }
         }
