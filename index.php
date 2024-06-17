@@ -3,7 +3,7 @@
 /**
  * @author: Samuel Amador
  */
-define('APP_NAME', 'ABUKAI TEST');
+define('APP_NAME', 'ABUKAI TEST - By Samuel Amador');
 
 define('BASE_URL', 'http://localhost/testabukai');
 
@@ -25,7 +25,6 @@ $files = glob($directory . '*.php');
 foreach ($files as $file) {
     require_once $file;
 }
-
 
 /**
  * We execute core which is the central unit of the app

@@ -4,6 +4,7 @@
  * Configure database. By default, we use mysql database.
  */
 
+
 return [
     'host'      => 'localhost',
 

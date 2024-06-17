@@ -1,6 +1,6 @@
 <?php
 
-require_once dir_views('/common/header');
+require_once dir_views('common/header');
 
 ?>
 <div class="form-container">
@@ -48,4 +48,4 @@ require_once dir_views('/common/header');
 
 <?php
 
-require_once dir_views('/common/footer');
+require_once dir_views('common/footer');

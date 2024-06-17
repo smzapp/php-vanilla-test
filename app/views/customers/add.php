@@ -1,6 +1,6 @@
 <?php
 
-require_once dir_views('/common/header');
+require_once dir_views('common/header');
 
 ?>
 <div class="form-container">
@@ -41,11 +41,11 @@ require_once dir_views('/common/header');
     </div>
     <div class="form-group">
         <button type="submit" class="btn">Save Changes</button>
-        <button type="clear" class="btn">Clear</button>
+        <button type="submit" class="btn">Cancel</button>
     </div>
   </form>
 </div>
 
 <?php
 
-require_once dir_views('/common/footer');
+require_once dir_views('common/footer');

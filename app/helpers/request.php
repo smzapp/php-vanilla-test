@@ -1,11 +1,9 @@
 <?php
 
-if(!function_exists('sanitize_str')) {
-    function sanitize_str($str) {
-        return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
-    }
-}
 
+/**
+ * POST Request
+ */
 if(!function_exists('post')) {
     function post($index, $sanitize = true) {
         if ($sanitize) {
@@ -15,6 +13,9 @@ if(!function_exists('post')) {
     }
 }
 
+/**
+ * GET Request
+ */
 if(!function_exists('get')) {
     function get($index, $sanitize = true) {
         if ($sanitize) {

@@ -18,11 +18,19 @@ class Core
     public function initialize()
     {
         try {
-            $controller = $this->activeRoute[0];
-            $method     = $this->activeRoute[1];
+            $index  = $this->activeRoute[0]; // controller
+            $value  = $this->activeRoute[1]; // method
 
-            $cntrl = new $controller;
-            return $cntrl->$method();
+            switch ($index) {
+                case 'view':
+                    require_once $value;
+                    break;
+                
+                default:
+                    $cntrl  = new $index;
+                    $cntrl->$value();
+                    break;
+            }
         } catch(\Exception $e) {
             exit($e->getMessage());
         }
