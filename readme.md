@@ -2,8 +2,8 @@
 
 # About 
 
-This source code is intended for code test for Abukai.
-Please do not distribute this without permission from the author.
+> Please do not distribute this without permission from the author.
+> Date: 6/17/2024
 
 # Setup
 

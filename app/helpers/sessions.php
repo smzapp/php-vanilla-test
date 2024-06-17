@@ -1,5 +1,9 @@
 <?php 
 
+/**
+ * Copyright : Samuel Amador 
+ */
+
 function get_session($key)
 {
      if (isset($_SESSION[$key])) {

@@ -43,10 +43,4 @@ class CustomerController extends BaseController
             return Response::with('/customers');
         }
     }
-
-    public function edit()
-    {
-        return Response::view('/customers/edit');
-    }
-    
 }
